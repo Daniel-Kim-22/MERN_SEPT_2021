@@ -15,4 +15,18 @@ const nums1 = [5,3,4,2,1];
 const nums2 = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
 const nums3 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 
-function bubbleSort(nums){}
+function bubbleSort(arr){
+    // Loop through
+    for (let i = 0; i < arr.length; i++){
+
+        // Compare values as we iterate
+        // If the current index value is greater 
+        for ( let j = 0; j < ( arr.length - i - 1); j++){ // Iterate through each index // 0 , 1
+            if( arr[j] > arr[j + 1]){ // Comparing the current index with the next one // 5 , 3 EXAMPLE
+                let temp = arr[j]; // Creating a temp variable to hold the value  // 5
+                arr[j] = arr [j + 1] // Swapping the current index with the following one // 3
+                arr[j + 1] = temp; // Setting the right index value to the left index value // 5 
+            }
+        }
+    }
+    console.log(arr)}
