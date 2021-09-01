@@ -18,4 +18,19 @@
 */
 const myArr = [3,2,9,5,1,4,8]
 
-function selectionSort(arr){}
+function selectionSort(arr){
+    for(var i = 0; i < arr.length; i++){
+        let min = i;
+        for(var j = i+1; j < arr.length; j++){
+            if (arr[j] < arr[min]){
+                min = j;
+            }
+        }
+        // make the swap
+        if(min != i) {
+            let temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
+        }
+    } return arr;
+}
