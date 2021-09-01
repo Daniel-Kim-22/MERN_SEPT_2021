@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+// import myCoolStyle from "./SomeClassComponent.module.css";
 
 
+const x = {
+    backgroundColor : "teal"
+}
 class SomeClassComponent extends Component {
     constructor(props) {
         super(props)
@@ -9,7 +13,9 @@ class SomeClassComponent extends Component {
             myPerson : this.props.person,
             age : this.props.person.age
         }
+        
     }
+
 
     increaseAge = () => {
         console.log("clicked");
