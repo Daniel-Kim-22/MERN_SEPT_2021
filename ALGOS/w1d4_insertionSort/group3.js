@@ -30,9 +30,38 @@
     6. move to next item and repeat
 */
 
-function insertionSort(arr) {}
+function insertionSort(arr) {
+    for(let i = 1; i<arr.length; i++){
+        let temp = arr[i];
+        // arr[i] = 2
+        // temp = 2
+        for(let j = i-1; j>= 0; j--){
+            // this loop starts at value 5
+            if(arr[j] > temp){
+                // arr[j] = 3
+                // if 3 > 2
+                
+                arr[j+1] = arr[j];
+                // [5,5,2,1,0]
+                
+                // temp = 3 I ma assigning that in arr[j]
+                // [3,5,2,1,0]
 
-insertionSort2([3,5,2,1,0])
+            }
+            else{
+                console.log(arr);
+                arr[j]=temp
+                console.log(arr);
+                // [3,5,]
+                
+            }
+        }
+        
+    }
+    return arr;  
+}
+
+insertionSort2([5,3,2,1,0])
 insertionSort2([3,0])
 insertionSort2([0])
 insertionSort2([])

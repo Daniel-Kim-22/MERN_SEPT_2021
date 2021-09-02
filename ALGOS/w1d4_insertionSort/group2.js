@@ -20,7 +20,7 @@
     4. if item to the left of current is greater than current item, shift the
         left item to the right.
     5. repeat step 4 as many times as needed
-    6. insert current item
+    6. insert current item  
     7. move to the next item and repeat
     // swap steps:
     1. consider the first item as sorted
@@ -30,12 +30,26 @@
     6. move to next item and repeat
 */
 
-function insertionSort(arr) {}
+function insertionSort2(arr) {
+    if(arr.length <2) return arr;
+    for( let i = 1; i<arr.length; i++){
+        let key = arr[i];
+        for(let j = i-1; j>=0; j--){
+            if(arr[j] > key) 
+                arr[j+1] = arr[j];
+            else{
+                break;
+            }
+        }
+    }
+    return arr;
+}
 
-insertionSort2([3,5,2,1,0])
-insertionSort2([3,0])
-insertionSort2([0])
-insertionSort2([])
-insertionSort2([1,2,3,4,5])
-insertionSort2([5,4,3,2,1])
-insertionSort2([5,4,0,2,1])
+
+console.log(insertionSort2([3,5,2,1,0]))
+console.log(insertionSort2([3,0]))
+console.log(insertionSort2([0]))
+console.log(insertionSort2([]))
+console.log(insertionSort2([1,2,3,4,5]))
+console.log(insertionSort2([5,4,3,2,1]))
+console.log(insertionSort2([5,4,0,2,1]))

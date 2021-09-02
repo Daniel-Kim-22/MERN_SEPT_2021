@@ -30,7 +30,20 @@
     6. move to next item and repeat
 */
 
-function insertionSort(arr) {}
+function insertionSort(arr) {
+    for(let i = 1; i<arr.length; i++){
+        let temp = arr[i];
+        for(let j = i-1; j >= 0; j--){
+            if(temp < arr[j]){
+                arr[i] = arr[j];
+            }
+            else{
+                arr[j] = temp;
+            }
+        }
+    }
+    return arr;
+}
 
 insertionSort2([3,5,2,1,0])
 insertionSort2([3,0])

@@ -30,7 +30,23 @@
     6. move to next item and repeat
 */
 
-function insertionSort(arr) {}
+function insertionSort(arr) {
+    var current;
+    for ( let i = 0; i < arr.length; i++){
+        current = arr[i]; // 5 //2 
+        for (let j = i - 1; j >= 0; j--){ // 3 
+            if( current < arr[j]){
+                arr[j+1] = arr[j]; // 5
+                if(j ==0) arr[0] = temp;
+            }
+            else{
+                arr[j + 1] = current;
+                break;
+            }
+        }
+    }
+    return arr;     
+}
 
 insertionSort2([3,5,2,1,0])
 insertionSort2([3,0])
