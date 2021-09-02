@@ -1,0 +1,26 @@
+.wrap {
+    background-color: rgb(246, 255, 240);
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.bg {
+    background-color: rgb(219, 34, 34);
+  }
+  
+.red {
+    color: red;
+    background-color: red;
+}
+
+.btn {
+    width: 80px;
+    height: 30px;
+    transition: 100ms;
+}
+.btn:hover {
+    background-color: blueviolet;
+    color: white;
+    transition: 100ms;
+    cursor: pointer;
+}
