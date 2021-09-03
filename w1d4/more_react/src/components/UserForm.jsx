@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import style from "./UserForm.module.css";
 
 
-const UserForm = (props) => {
+const UserForm = ({addNewUser}) => {
 
     // const {addNewUser} = props;
 
@@ -31,9 +31,21 @@ const UserForm = (props) => {
         // props.setAllUsers(newUsersArray);
 
         // 🎈🎈🎈 calling the function from app.js and pass the new user obj we created
-        props.addNewUser(newUser);
+        // props.addNewUser(newUser);
+        addNewUser(newUser);
     
     };
+
+    // ternary
+    // x = 10;
+    // if (x > 5) {
+    //     return "yes"
+    // } else {
+    //     return "no"
+    // }
+
+    // { x > 5 ? "yes" : "no"}
+
 
 
 
