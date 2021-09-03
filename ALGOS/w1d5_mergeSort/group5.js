@@ -25,12 +25,58 @@
 // 88
 
 // main recursive function that will be passed in mergeSortedArrays()
-function mergeSort(arr) {}
+function mergeSort(arr) {
+    // base case
+    if (arr.length === 1) {
+        return arr;
+    }
 
-// return a new sorted array with all of the values of arr1 and arr2
+    // logic
+    
+
+    // recurse
+    return mergeSortedArrays(left, right)
+}
+
+// return a new sorted array with all of the values of leftArr and rightArr
 // takes 2 sorted arrays and merges them together
 // solve this first
-function mergeSortedArrays(leftArr, rightArr) {}
+//                       [2,5,9]      [4,6]
+//                              [4]     [6]
+//                          [4,10]     [6]
+function mergeSortedArrays(leftArr, rightArr) {
+    // setup
+    let sortedArr = []
+    let leftIdx = 0;
+    let rightIdx = 0;
+    // logic
+    // if (leftArr.length || rightArr.length === 0) {
+    if (leftArr.length === 0 ) {
+        return rightArr;
+    } 
+        else if (rightArr.length === 0) {
+                return leftArr;
+            }
+            else if (leftArr.length && rightArr.length === 0) {
+                return;
+            }
+    while (leftArr.length || rightArr.length) {    
+			// push to sortedArr
+            if (leftArr[0] < rightArr[0]) {
+                sortedArr.push(leftArr.shift());
+            }
+            else {
+                sortedArr.push(rightArr.shift());
+            }
+        
+    }
+    // check lengths
+
+
+
+    // return
+    return sortedArr
+}
 
 // //steps:
 //     1. create a mergeSortedArrays(leftArr, rightArr) function to merge two already sorted arrays into a single sorted array
@@ -57,3 +103,63 @@ var arr = [88, 22, 44, 12, 99, 111, 9, 15, 49]
 // var m = Math.floor(arr.length / 2)
 // var l = arr.slice(0, m);
 // var r = arr.slice(m, arr.length);
+
+
+
+
+
+
+
+
+
+
+// function example() {
+//     example();
+// }
+
+// example()
+
+
+// 5!
+// 5*4*3*2*1
+
+// 3! 
+// 3*2*1
+
+// 2!
+// 2*1
+
+function factorial(num) {
+    // 1. base case - break out!
+    if (num === 1) {
+        return 1;
+    }
+    // 2. logic
+    // let numMunis1Fac = num -1;
+
+    // 3. recursive call - return the function
+    return num * factorial(num - 1);
+
+}
+
+factorial(4);
+// 4*3*2*1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

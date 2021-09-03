@@ -25,12 +25,48 @@
 // 88
 
 // main recursive function that will be passed in mergeSortedArrays()
-function mergeSort(arr) {}
+function mergeSort(arr) {
+    // base case
+    if (arr.length === 1) {
+        return arr;
+    }
 
-// return a new sorted array with all of the values of arr1 and arr2
+    // logic
+    middleIdx = arr.length / 2;
+    leftHalf = arr.slice(0, middleIdx);
+    rightHalf = arr.slice(middleIdx);
+
+    // recurse
+    // left = mergeSort(leftHalf)
+    // right = mergeSort(rightHalf)
+    // return mergeSortedArrays(left, right);
+    return mergeSortedArrays(mergeSort(leftHalf), mergeSort(rightHalf));
+}
+
+// return a new sorted array with all of the values of leftArr and rightArr
 // takes 2 sorted arrays and merges them together
 // solve this first
-function mergeSortedArrays(leftArr, rightArr) {}
+//                       [2,5,9]      [4,6]
+function mergeSortedArrays(leftArr, rightArr) {
+    // setup
+    let sortedArr = []
+    let leftIdx = 0;
+    let rightIdx = 0;
+    // logic
+    // checking lengths
+    while(leftIdx != leftArr.length || rightIdx != rightArr.length) {
+        if(leftArr[leftIdx] >= rightArr[rightIdx]) {
+            // pushing to sortedArr
+            sortedArr.push(rightArr[rightIdx]);
+            rightIdx++;
+        } else {
+            sortedArr.push(leftArr[leftIdx]);
+            leftIdx++;
+        }
+    }
+    // return
+    return sortedArr
+}
 
 // //steps:
 //     1. create a mergeSortedArrays(leftArr, rightArr) function to merge two already sorted arrays into a single sorted array
@@ -57,3 +93,44 @@ var arr = [88, 22, 44, 12, 99, 111, 9, 15, 49]
 // var m = Math.floor(arr.length / 2)
 // var l = arr.slice(0, m);
 // var r = arr.slice(m, arr.length);
+
+
+
+
+
+
+
+
+
+
+// function example() {
+//     example();
+// }
+
+// example()
+
+
+// 5!
+// 5*4*3*2*1
+
+// 3! 
+// 3*2*1
+
+// 2!
+// 2*1
+
+function factorial(num) {
+    // 1. base case - break out!
+    if (num === 1) {
+        return 1;
+    }
+    // 2. logic
+    // let numMunis1Fac = num -1;
+
+    // 3. recursive call - return the function
+    return num * factorial(num - 1);
+
+}
+
+factorial(4);
+// 4*3*2*1

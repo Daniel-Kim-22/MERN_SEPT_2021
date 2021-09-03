@@ -25,12 +25,47 @@
 // 88
 
 // main recursive function that will be passed in mergeSortedArrays()
-function mergeSort(arr) {}
+function mergeSort(arr) {
+    // base case
+    if (arr.length === 1) {
+        return arr;
+    }
+    
+    let mid = Math.floor(arr.length/2);
+    let left = arr.slice(0,mid);
+    let right = arr.slice(mid,arr.length)
 
-// return a new sorted array with all of the values of arr1 and arr2
+    return mergeSortedArrays(left, right)
+}
+
+// return a new sorted array with all of the values of leftArr and rightArr
 // takes 2 sorted arrays and merges them together
 // solve this first
-function mergeSortedArrays(leftArr, rightArr) {}
+//                       [2,5,9]      [4,6]
+function mergeSortedArrays(leftArr, rightArr) {
+    // setup
+    let sortedArr = []
+
+    while (leftArr.length  && rightArr.length) {
+        if(leftArr[0] < rightArr[0]) {
+            sortedArr.push(leftArr[0]);
+            leftArr.shift();
+        } else {
+            sortedArr.push(rightArr[0]);
+            rightArr.shift();
+        }
+    }
+
+    if(leftArr.length) {
+        sortedArr.push(leftArr[0]);
+    }
+    
+    if(rightArr.length) {
+        sortedArr.push(rightArr[0]);
+    }
+    
+    return sortedArr;
+}
 
 // //steps:
 //     1. create a mergeSortedArrays(leftArr, rightArr) function to merge two already sorted arrays into a single sorted array
