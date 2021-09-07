@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import style from "./UserForm.module.css";
 
 
-const UserForm = ({addNewUser}) => {
+const UserForm = (props) => {
 
     // const {addNewUser} = props;
 
@@ -32,7 +32,7 @@ const UserForm = ({addNewUser}) => {
 
         // 🎈🎈🎈 calling the function from app.js and pass the new user obj we created
         // props.addNewUser(newUser);
-        addNewUser(newUser);
+        props.addNewUser(newUser);
     
     };
 
